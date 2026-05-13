@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Sarwar Uddin Chowdhury | PhD Candidate, UCF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f1eb;
+      --surface: #ffffff;
+      --surface2: #faf8f4;
+      --text: #1a1a2e;
+      --muted: #6b6b7a;
+      --accent: #1a3a5c;
+      --accent2: #c9973a;
+      --accent-light: #edf3f9;
+      --border: #e2ddd5;
+      --shadow: 0 4px 24px rgba(26,58,92,0.09);
+      --max-width: 1100px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent2); text-decoration: underline; }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* ── NAV ── */
+    header {
+      background: var(--accent);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    .nav-links a {
+      color: rgba(255,255,255,0.88);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--accent2); text-decoration: none; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #1a3a5c 0%, #0d2438 55%, #1a2a40 100%);
+      color: white;
+      padding: 5rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      line-height: 1.15;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .hero-role {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 1.4rem;
+      font-weight: 300;
+    }
+
+    .hero-role strong { color: rgba(255,255,255,0.95); font-weight: 600; }
+
+    .hero p {
+      color: rgba(255,255,255,0.78);
+      max-width: 600px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.6rem; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.72rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-gold {
+      background: var(--accent2);
+      color: #fff;
+      border: 2px solid var(--accent2);
+    }
+    .btn-gold:hover { background: #b88430; border-color: #b88430; text-decoration: none; color: #fff; }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); text-decoration: none; color: #fff; }
+
+    .hero-photo-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 1.6rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 2px dashed rgba(255,255,255,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 1.5rem;
+      gap: 0.6rem;
+    }
+
+    .photo-icon { font-size: 2.5rem; opacity: 0.4; }
+
+    .quick-info {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .quick-info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .q-icon { color: var(--accent2); font-size: 1rem; }
+
+    /* ── SECTIONS ── */
+    section { padding: 4rem 0; }
+    section:nth-child(even) { background: var(--surface2); }
+    section:nth-child(odd) { background: var(--bg); }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .card p { color: #3a3a4a; font-size: 0.97rem; margin-bottom: 0.6rem; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .card-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+    .card-grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.2rem; }
+
+    /* ── TAGS ── */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+    .tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .tag-gold { background: #fdf3e1; color: #8a6420; }
+
+    /* ── EXPERIENCE ── */
+    .exp-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem 1.5rem;
+    }
+    .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .exp-title { font-weight: 700; color: var(--accent); font-size: 1.02rem; }
+    .exp-org { color: var(--muted); font-size: 0.92rem; margin-top: 0.15rem; }
+    .exp-date {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent2);
+      white-space: nowrap;
+      text-align: right;
+    }
+    .exp-detail { grid-column: 1/-1; }
+    .exp-detail ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+    .exp-detail ul li { font-size: 0.94rem; color: #3a3a4a; margin-bottom: 0.3rem; }
+
+    /* ── PUBLICATIONS ── */
+    .pub-group-title {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      color: var(--accent);
+      margin: 1.4rem 0 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--accent2);
+      display: inline-block;
+    }
+
+    .pub-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-title { font-weight: 700; color: var(--text); font-size: 0.97rem; line-height: 1.4; margin-bottom: 0.3rem; }
+    .pub-meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .pub-status {
+      display: inline-block;
+      background: #fff3cd;
+      color: #7a5c00;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-left: 0.5rem;
+    }
+    .pub-links { font-size: 0.88rem; }
+    .pub-links a { color: var(--accent2); font-weight: 600; }
+    .pub-links a:hover { text-decoration: underline; }
+
+    /* ── PROJECTS ── */
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--accent2);
+    }
+    .project-card h3 { font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.4rem; }
+    .project-card .p-date { font-size: 0.82rem; color: var(--accent2); font-weight: 700; margin-bottom: 0.5rem; }
+    .project-card p { font-size: 0.93rem; color: #444; }
+
+    /* ── PHILOSOPHY UPLOAD ── */
+    .upload-zone {
+      border: 2px dashed #b8c9d8;
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      background: #fbfdff;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .upload-zone:hover, .upload-zone.dragover {
+      border-color: var(--accent2);
+      background: #fdf8f0;
+    }
+    .upload-icon { font-size: 2.4rem; margin-bottom: 0.6rem; }
+    .upload-zone h4 { font-family: var(--serif); color: var(--accent); margin-bottom: 0.4rem; }
+    .upload-zone p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+    .upload-btn { display: inline-block; }
+    .file-chosen { margin-top: 0.8rem; font-size: 0.88rem; color: var(--accent2); font-weight: 600; display: none; }
+    .view-link { display: none; margin-top: 0.8rem; }
+    .view-link a { font-weight: 700; color: var(--accent); }
+
+    /* ── CV ── */
+    .cv-box {
+      text-align: center;
+      padding: 3rem 2rem;
+      border: 2px dashed #b8c9d8;
+      border-radius: 16px;
+      background: #fbfdff;
+    }
+    .cv-box p { color: var(--muted); margin-bottom: 0.6rem; }
+
+    /* ── AWARDS ── */
+    .award-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .award-item:last-child { border-bottom: none; }
+    .award-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .award-text { flex: 1; }
+    .award-text strong { display: block; font-size: 0.97rem; color: var(--text); }
+    .award-text span { font-size: 0.88rem; color: var(--muted); }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.4rem; }
+    .contact-item { display: flex; align-items: center; gap: 0.8rem; padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
+    .contact-item:last-child { border-bottom: none; }
+    .c-icon { font-size: 1.2rem; color: var(--accent2); flex-shrink: 0; }
+    .c-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .c-val { font-weight: 600; font-size: 0.95rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--accent);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    footer a { color: var(--accent2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid, .card-grid-3, .card-grid-2, .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 3.5rem 0 3rem; }
+      .hero h1 { font-size: 2.1rem; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-date { text-align: left; }
+    }
+
+    @media (max-width: 600px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { gap: 0.8rem; }
+      .section-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <div class="container nav">
+    <div class="brand">Md Sarwar Uddin Chowdhury</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow">PhD Candidate (ABD) · UCF · Orlando, FL</div>
+      <h1>Md Sarwar Uddin Chowdhury</h1>
+      <p class="hero-role">
+        <strong>Electrical &amp; Computer Engineering</strong> &mdash;
+        Free-Space Optical Communication, Visible Light Communication &amp; System Optimization
+      </p>
+      <p>
+        PhD Candidate at the University of Central Florida with over ten years of university-level teaching,
+        research, and project supervision experience. My research spans FSO and VLC technologies,
+        AI-assisted optimization, and UAV-enabled platforms.
+      </p>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.55);">
+        Advisor: Dr. Murat Yuksel &nbsp;·&nbsp; NSF-funded research
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-gold" href="#research">View Research</a>
+        <a class="btn btn-outline" href="#publications">Publications</a>
+        <a class="btn btn-outline" href="CV.pdf" target="_blank">Download CV</a>
+        <a class="btn btn-outline" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="hero-photo-card">
+      <div class="photo-placeholder">
+        <div class="photo-icon">🎓</div>
+        <div>Replace with your professional photo<br><code style="font-size:0.78rem;opacity:0.6">profile.jpg</code></div>
+      </div>
+      <div class="quick-info">
+        <div class="quick-info-item"><span class="q-icon">📍</span> Orlando, FL 32826</div>
+        <div class="quick-info-item"><span class="q-icon">🏛️</span> University of Central Florida</div>
+        <div class="quick-info-item"><span class="q-icon">📅</span> PhD Expected: Summer 2026</div>
+        <div class="quick-info-item"><span class="q-icon">📧</span> mdsarwaruddin.chowdhury@ucf.edu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">About</h2>
+    <div class="card-grid-2">
+      <div class="card">
+        <h3>Professional Summary</h3>
+        <p>
+          I am a PhD Candidate (ABD) in Electrical Engineering at UCF, with over a decade of
+          university-level teaching, research, and student project supervision in Bangladesh and the US.
+        </p>
+        <p>
+          My current doctoral research focuses on intelligent communication and sensor network systems,
+          including free-space optical (FSO) and visible light communication (VLC) technologies, with
+          applications in AI-assisted optimization and UAV-enabled platforms. I also have expertise in
+          antenna design, renewable energy, and robotics.
+        </p>
+        <p>My NIW I-140 petition has been approved; I-485 filed November 2025.</p>
+      </div>
+      <div class="card">
+        <h3>Research Interests</h3>
+        <div class="tag-list">
+          <span class="tag">Free-Space Optical Communication</span>
+          <span class="tag">Visible Light Communication</span>
+          <span class="tag">UAV Communications</span>
+          <span class="tag">System Optimization</span>
+          <span class="tag">IoT Networks</span>
+          <span class="tag">Resource Allocation</span>
+          <span class="tag">Antenna Design</span>
+          <span class="tag">Renewable Energy</span>
+          <span class="tag">AI-Assisted Networking</span>
+          <span class="tag">THz Antennas</span>
+        </div>
+        <div class="tag-list" style="margin-top:1rem;">
+          <span class="tag tag-gold">Python</span>
+          <span class="tag tag-gold">MATLAB</span>
+          <span class="tag tag-gold">CST</span>
+          <span class="tag tag-gold">OptiSystem</span>
+          <span class="tag tag-gold">LaTeX</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div style="margin-top:2rem;">
+      <h3 style="font-family:var(--serif);font-size:1.4rem;color:var(--accent);margin-bottom:1rem;">Education</h3>
+      <div class="card">
+        <div class="exp-item">
+          <div>
+            <div class="exp-title">PhD in Electrical Engineering</div>
+            <div class="exp-org">University of Central Florida (UCF) · Orlando, FL<br>
+            <em style="font-size:0.9rem;">Advisor: Dr. Murat Yuksel</em></div>
+          </div>
+          <div class="exp-date">Expected Summer 2026</div>
+        </div>
+        <div class="exp-item">
+          <div>
+            <div class="exp-title">M.Sc. in Electrical and Electronic Engineering</div>
+            <div class="exp-org">Chittagong University of Engineering and Technology (CUET), Bangladesh</div>
+          </div>
+          <div class="exp-date">2020</div>
+        </div>
+        <div class="exp-item">
+          <div>
+            <div class="exp-title">B.Sc. in Electrical and Electronic Engineering</div>
+            <div class="exp-org">Chittagong University of Engineering and Technology (CUET), Bangladesh</div>
+          </div>
+          <div class="exp-date">2010</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH / PROJECTS -->
+<section id="research">
+  <div class="container">
+    <div class="section-label">Research</div>
+    <h2 class="section-title">Research Areas &amp; Projects</h2>
+    <p class="section-lead">Current and past research directions in the Networking and Wireless Systems Lab at UCF (NSF-funded).</p>
+
+    <div class="card-grid-3" style="margin-bottom:2rem;">
+      <div class="card">
+        <h3>Free-Space Optical Communication</h3>
+        <p>Modeling and optimization of FSO links for mobile platforms, including atmospheric attenuation,
+        beam propagation, pointing error, vibration effects, and multi-element transceiver layout design for in-band full-duplex UAV links.</p>
+      </div>
+      <div class="card">
+        <h3>Visible Light Communication</h3>
+        <p>Optimization of LED power allocation, LED and IoT device clustering, and communication fairness
+        under strict illumination and uniformity constraints in dense indoor IoT environments using multi-element hemispherical bulbs.</p>
+      </div>
+      <div class="card">
+        <h3>System-Level Optimization</h3>
+        <p>Mathematical and algorithmic frameworks for clustering, association, and resource allocation,
+        with emphasis on scalable, hardware-aware wireless system design and AI-assisted network optimization.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:1.3rem;color:var(--accent);margin-bottom:1rem;">Active Projects</h3>
+    <div class="card-grid-3">
+      <div class="project-card">
+        <div class="p-date">Aug 2022 – Present</div>
+        <h3>3D RF/FSO Mesh Networking with Challenged Infrastructure</h3>
+        <p>Designing multi-element transceiver systems for FSO communication between UAVs. Conference paper published; journal paper under review; hardware implementation ongoing.</p>
+      </div>
+      <div class="project-card">
+        <div class="p-date">Aug 2024 – Present</div>
+        <h3>Clustering Optimization in VLC for IoT Networks</h3>
+        <p>VLC-based architecture for scalable communications to IoT devices using a multi-element hemispherical bulb. Journal paper under 2nd phase review.</p>
+      </div>
+      <div class="project-card">
+        <div class="p-date">Jan 2025 – Present</div>
+        <h3>UAV Vibration Study</h3>
+        <p>Experimental analysis of UAV-induced vibrations on optical wireless link stability and receiver design optimization. Conference paper in progress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Career</div>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="card">
+      <div class="exp-item">
+        <div>
+          <div class="exp-title">Graduate Research Assistant &amp; Teaching Assistant</div>
+          <div class="exp-org">Department of ECE, University of Central Florida · Orlando, FL</div>
+        </div>
+        <div class="exp-date">Aug 2022 – Present</div>
+        <div class="exp-detail">
+          <ul>
+            <li>Conduct laboratory classes and grade coursework for undergraduate courses.</li>
+            <li>Lead research on UAV-mounted FSO communication and indoor VLC systems (NSF-funded).</li>
+            <li>Review and evaluate submissions for IEEE conferences and journals.</li>
+            <li>Present research findings at seminars; collaborate on interdisciplinary workshops.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-title">Assistant Professor &amp; Lecturer</div>
+          <div class="exp-org">Department of EEE, Southern University Bangladesh</div>
+        </div>
+        <div class="exp-date">Nov 2020 – Aug 2022</div>
+        <div class="exp-detail">
+          <ul>
+            <li>Taught power system protection, electronics, and digital communication.</li>
+            <li>Developed laboratory experiments and instructional activities for multiple courses.</li>
+            <li>Supervised senior design projects; led curriculum development committee.</li>
+            <li>Worked as Program Coordinator of the Department of EEE.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-title">Assistant Professor (Adjunct)</div>
+          <div class="exp-org">Department of EEE, East Delta University · Chittagong, Bangladesh</div>
+        </div>
+        <div class="exp-date">Jan 2020 – Aug 2022</div>
+        <div class="exp-detail">
+          <ul>
+            <li>Taught power system protection, digital signal processing, digital communication, and engineering probability.</li>
+            <li>Developed laboratory experiments for multiple courses.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-title">Assistant Professor</div>
+          <div class="exp-org">Department of EEE, University of Science and Technology Chittagong (USTC) · Bangladesh</div>
+        </div>
+        <div class="exp-date">Nov 2015 – Nov 2019</div>
+        <div class="exp-detail">
+          <ul>
+            <li>Headed the department; led Self-Assessment Committee under IQAC in collaboration with USTC and World Bank HEQEP initiative.</li>
+            <li>Supervised senior design projects; published in conferences and journals.</li>
+            <li>Led curriculum development project; developed laboratory experiments.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-title">Lecturer</div>
+          <div class="exp-org">Department of EEE, USTC · Chittagong, Bangladesh</div>
+        </div>
+        <div class="exp-date">Mar 2011 – Nov 2015</div>
+        <div class="exp-detail">
+          <ul>
+            <li>Served as Program Coordinator of the EEE department.</li>
+            <li>Prepared class schedules, organized question moderation, and scheduled examinations.</li>
+            <li>Delivered lectures on circuit analysis, electronics, communication, VLSI, and power systems.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="section-label">Scholarship</div>
+    <h2 class="section-title">Publications &amp; Presentations</h2>
+
+    <div class="card">
+      <div class="pub-group-title">PhD Research Publications</div>
+
+      <div class="pub-item">
+        <div class="pub-title">Optimum Tiling of Free-Space Optical Transceivers for In-Band Full-Duplex Communication</div>
+        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, Yuksel, M. &mdash; <em>IEEE Transactions on Communications</em>, 2025</div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1109/TCOMM.2025.3642713" target="_blank">DOI: 10.1109/TCOMM.2025.3642713</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Optimized Clustering of LEDs and IoT Devices in VLC Networks with Uniformity Constraints <span class="pub-status">Under 2nd Review</span></div>
+        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, Alhartomi, M., Alsharoa, A., Yuksel, M. &mdash; <em>IEEE Transactions on Wireless Communications</em>, 2026</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Impact of UAV Motion and Vibration on Free-Space Optical Link Stability: Measurement and Simulation <span class="pub-status">Under Review</span></div>
+        <div class="pub-meta">Sadman, Y., Sayed, Z.M., <strong>Chowdhury, M. S. U.</strong>, Samiul, S. S., Yuksel, M. &mdash; <em>IEEE Transactions on Communications</em>, 2026</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">A Comprehensive Review of Optical Wireless Propagation Models Across Diverse Environments <span class="pub-status">In Preparation</span></div>
+        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, Sardar, A.I., Samiul, S. S., Sayed, Z.M., Yuksel, M. &mdash; 2026</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">In-Band Full-Duplex Free-Space Optical Transceiver Design for Flying Platforms</div>
+        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, Yuksel, M. &mdash; <em>IEEE Military Communications Conference (MILCOM)</em>, Boston, MA, 2023</div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1109/MILCOM58377.2023.10356374" target="_blank">DOI: 10.1109/MILCOM58377.2023.10356374</a>
+        </div>
+      </div>
+
+      <div class="pub-group-title">Selected Journal Articles</div>
+
+      <div class="pub-item">
+        <div class="pub-title">Numerical Analysis of an ITO-Based Circularly Polarized Optically Transparent THz Antenna</div>
+        <div class="pub-meta">Rahman, M. A., <strong>Chowdhury, M. S. U.</strong>, et al. &mdash; <em>Progress in Electromagnetics Research C</em>, vol. 117, 2021</div>
+        <div class="pub-links"><a href="https://doi.org/10.2528/PIERC21081301" target="_blank">DOI: 10.2528/PIERC21081301</a></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Design and Analysis of a Grid-Connected Hybrid Power System for Patenga, Bangladesh</div>
+        <div class="pub-meta">Kabir, K. M., Mazumder, S., <strong>Chowdhury, M. S. U.</strong>, et al. &mdash; <em>Cogent Engineering</em>, vol. 7, 2020</div>
+        <div class="pub-links"><a href="https://doi.org/10.1080/23311916.2020.1762524" target="_blank">DOI: 10.1080/23311916.2020.1762524</a></div>
+      </div>
+
+      <div class="pub-group-title">Selected Conference Proceedings</div>
+
+      <div class="pub-item">
+        <div class="pub-title">A Four-Element Triple-Band MIMO Antenna for 5G Smartphone Applications</div>
+        <div class="pub-meta">Faruque, O., Islam, M. S., <strong>Chowdhury, M. S. U.</strong>, et al. &mdash; <em>Int'l Conf. on Sustainable Technologies for Industry 4.0</em>, Dhaka, 2020</div>
+        <div class="pub-links"><a href="https://doi.org/10.1109/STI50764.2020.9350453" target="_blank">DOI: 10.1109/STI50764.2020.9350453</a></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">A Transparent Conductive Material Based Circularly Polarized Nano-Antenna for THz Applications</div>
+        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, et al. &mdash; <em>IEEE Region 10 Symposium (TENSYMP)</em>, 2020</div>
+        <div class="pub-links"><a href="https://doi.org/10.1109/TENSYMP50017.2020.9230696" target="_blank">DOI: 10.1109/TENSYMP50017.2020.9230696</a></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Design of an ITO-Based CNT-Coated Transparent Nano Patch Antenna Assisted by Characteristic Mode Analysis</div>
+        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, et al. &mdash; <em>5th Int'l Conference on Advances in Electrical Engineering (ICAEE)</em>, Dhaka, 2019</div>
+        <div class="pub-links"><a href="https://doi.org/10.1109/ICAEE48663.2019.8975428" target="_blank">DOI: 10.1109/ICAEE48663.2019.8975428</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="container">
+    <div class="section-label">Instruction</div>
+    <h2 class="section-title">Teaching</h2>
+    <div class="card-grid-2" style="margin-bottom:1.5rem;">
+      <div class="card">
+        <h3>Teaching Experience</h3>
+        <ul style="padding-left:1.2rem;margin-top:0.5rem;">
+          <li style="margin-bottom:0.4rem;">Graduate Teaching Assistant, UCF (2022–Present)</li>
+          <li style="margin-bottom:0.4rem;">Assistant Professor, Southern University Bangladesh (2021–2022)</li>
+          <li style="margin-bottom:0.4rem;">Adjunct, East Delta University (2020–2022)</li>
+          <li style="margin-bottom:0.4rem;">Assistant Professor, USTC (2015–2019)</li>
+          <li style="margin-bottom:0.4rem;">Lecturer, USTC (2011–2015)</li>
+          <li>Completed <em>Preparing Tomorrow's Faculty</em> professional development at UCF</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Courses Taught / Qualified to Teach</h3>
+        <div class="tag-list">
+          <span class="tag">Circuits</span>
+          <span class="tag">Electronics</span>
+          <span class="tag">Communication Systems</span>
+          <span class="tag">Digital Communications</span>
+          <span class="tag">Signals and Systems</span>
+          <span class="tag">Wireless Communications</span>
+          <span class="tag">Power Systems</span>
+          <span class="tag">Antenna Theory</span>
+          <span class="tag">Digital Signal Processing</span>
+          <span class="tag">Electromagnetics</span>
+          <span class="tag">Control Systems</span>
+          <span class="tag">VLSI</span>
+          <span class="tag">Optimization</span>
+          <span class="tag">Intro ML for Engineers</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">Renewable Energy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Awards & Leadership -->
+    <h3 style="font-family:var(--serif);font-size:1.3rem;color:var(--accent);margin:2rem 0 1rem;">Awards, Leadership &amp; Recognitions</h3>
+    <div class="card">
+      <div class="award-item">
+        <div class="award-icon">🏆</div>
+        <div class="award-text">
+          <strong>Dr. Fatema Rashid 2nd Best Paper Award</strong>
+          <span>5th Int'l Conference on Advances in Electrical Engineering (ICAEE), Dhaka, Bangladesh · 2019</span>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">🥇</div>
+        <div class="award-text">
+          <strong>Best Paper Award</strong>
+          <span>2nd Int'l Conference on Sustainable Technologies for Industry 4.0, Dhaka, Bangladesh · 2020</span>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">🏛️</div>
+        <div class="award-text">
+          <strong>Head of EEE Department, USTC</strong>
+          <span>2018</span>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">📋</div>
+        <div class="award-text">
+          <strong>Head of Self-Assessment Committee, IQAC, USTC (World Bank HEQEP)</strong>
+          <span>2017</span>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">🤝</div>
+        <div class="award-text">
+          <strong>Volunteer, East Orange County Head Start Program</strong>
+          <span>Fall 2024 – Spring 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY UPLOAD -->
+<section id="philosophy">
+  <div class="container">
+    <div class="section-label">Statements</div>
+    <h2 class="section-title">Teaching &amp; Research Philosophy</h2>
+    <p class="section-lead">Upload your Teaching Philosophy and Research Philosophy statements below. Files are displayed in-browser for reviewers.</p>
+
+    <div class="card-grid-2">
+      <!-- Teaching Philosophy -->
+      <div class="card">
+        <h3>📖 Teaching Philosophy</h3>
+        <p style="color:var(--muted);font-size:0.92rem;margin-bottom:1.2rem;">Upload a PDF of your teaching philosophy statement.</p>
+        <div class="upload-zone" id="teaching-zone" onclick="document.getElementById('teaching-file').click()">
+          <div class="upload-icon">📄</div>
+          <h4>Teaching Philosophy</h4>
+          <p>Drag &amp; drop your PDF here, or click to browse</p>
+          <span class="btn btn-gold" style="font-size:0.85rem;padding:0.5rem 1rem;">Choose File</span>
+          <div class="file-chosen" id="teaching-chosen"></div>
+        </div>
+        <input type="file" id="teaching-file" accept=".pdf" style="display:none" onchange="handleFile(this,'teaching')">
+        <div class="view-link" id="teaching-view">
+          <a id="teaching-link" href="#" target="_blank">📄 View Teaching Philosophy</a>
+        </div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-top:0.8rem;">
+          <strong>Tip:</strong> Save as <code>teaching_philosophy.pdf</code> in your GitHub Pages repo and link directly.
+        </p>
+        <p style="margin-top:0.5rem;">
+          <a class="btn btn-gold" href="teaching_philosophy.pdf" target="_blank" style="font-size:0.85rem;padding:0.5rem 1rem;display:inline-block;">Download Teaching Philosophy</a>
+        </p>
+      </div>
+
+      <!-- Research Philosophy -->
+      <div class="card">
+        <h3>🔬 Research Philosophy</h3>
+        <p style="color:var(--muted);font-size:0.92rem;margin-bottom:1.2rem;">Upload a PDF of your research philosophy / research statement.</p>
+        <div class="upload-zone" id="research-zone" onclick="document.getElementById('research-file').click()">
+          <div class="upload-icon">📄</div>
+          <h4>Research Philosophy</h4>
+          <p>Drag &amp; drop your PDF here, or click to browse</p>
+          <span class="btn btn-gold" style="font-size:0.85rem;padding:0.5rem 1rem;">Choose File</span>
+          <div class="file-chosen" id="research-chosen"></div>
+        </div>
+        <input type="file" id="research-file" accept=".pdf" style="display:none" onchange="handleFile(this,'research')">
+        <div class="view-link" id="research-view">
+          <a id="research-link" href="#" target="_blank">📄 View Research Philosophy</a>
+        </div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-top:0.8rem;">
+          <strong>Tip:</strong> Save as <code>research_philosophy.pdf</code> in your GitHub Pages repo and link directly.
+        </p>
+        <p style="margin-top:0.5rem;">
+          <a class="btn btn-gold" href="research_philosophy.pdf" target="_blank" style="font-size:0.85rem;padding:0.5rem 1rem;display:inline-block;">Download Research Philosophy</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="container">
+    <div class="section-label">Documents</div>
+    <h2 class="section-title">Curriculum Vitae</h2>
+    <div class="cv-box">
+      <p style="font-size:1.1rem;font-family:var(--serif);color:var(--accent);font-weight:700;margin-bottom:0.8rem;">Download Full CV</p>
+      <p>Save your CV PDF as <strong>CV.pdf</strong> in the same GitHub Pages folder.</p>
+      <p style="margin-bottom:1.5rem;color:var(--muted);font-size:0.9rem;">
+        <a href="https://scholar.google.com/citations?user=gyP-WAMAAAAJ&hl=en" target="_blank">Google Scholar Profile</a>
+      </p>
+      <a class="btn btn-gold" href="CV.pdf" target="_blank">📄 Download CV (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Contact</h2>
+    <p class="section-lead">Open to research collaborations, teaching opportunities, and academic faculty positions.</p>
+    <div class="contact-grid">
+      <div class="card">
+        <div class="contact-item">
+          <span class="c-icon">📧</span>
+          <div>
+            <div class="c-label">Email</div>
+            <div class="c-val"><a href="mailto:mdsarwaruddin.chowdhury@ucf.edu">mdsarwaruddin.chowdhury@ucf.edu</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="c-icon">📞</span>
+          <div>
+            <div class="c-label">Phone</div>
+            <div class="c-val">+1 (689) 242-7814</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="c-icon">📍</span>
+          <div>
+            <div class="c-label">Address</div>
+            <div class="c-val">3042 Southern Pine Trail, Orlando, FL 32826</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="c-icon">🎓</span>
+          <div>
+            <div class="c-label">Google Scholar</div>
+            <div class="c-val"><a href="https://scholar.google.com/citations?user=gyP-WAMAAAAJ&hl=en" target="_blank">View Profile</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="c-icon">💼</span>
+          <div>
+            <div class="c-label">LinkedIn</div>
+            <div class="c-val"><a href="#">Add your LinkedIn link</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="c-icon">🐙</span>
+          <div>
+            <div class="c-label">GitHub</div>
+            <div class="c-val"><a href="#">Add your GitHub link</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>References</h3>
+        <div style="display:flex;flex-direction:column;gap:0.9rem;margin-top:0.6rem;">
+          <div style="padding-bottom:0.7rem;border-bottom:1px solid var(--border);">
+            <div style="font-weight:700;font-size:0.95rem;">Dr. Murat Yuksel</div>
+            <div style="color:var(--muted);font-size:0.88rem;">Professor &amp; PhD Advisor, UCF ECE</div>
+            <div style="font-size:0.88rem;"><a href="mailto:murat.yuksel@ucf.edu">murat.yuksel@ucf.edu</a></div>
+          </div>
+          <div style="padding-bottom:0.7rem;border-bottom:1px solid var(--border);">
+            <div style="font-weight:700;font-size:0.95rem;">Laurie Uttich</div>
+            <div style="color:var(--muted);font-size:0.88rem;">Instructor Specialist, Faculty Center for Teaching &amp; Learning, UCF</div>
+            <div style="font-size:0.88rem;"><a href="mailto:laurie.uttich@ucf.edu">laurie.uttich@ucf.edu</a></div>
+          </div>
+          <div style="padding-bottom:0.7rem;border-bottom:1px solid var(--border);">
+            <div style="font-weight:700;font-size:0.95rem;">Dr. Muhammad Asad Rahman</div>
+            <div style="color:var(--muted);font-size:0.88rem;">Professor &amp; MSc Advisor, CUET EEE</div>
+            <div style="font-size:0.88rem;"><a href="mailto:asad31@cuet.ac.bd">asad31@cuet.ac.bd</a></div>
+          </div>
+          <div>
+            <div style="font-weight:700;font-size:0.95rem;">Dr. Rebecca Freihaut</div>
+            <div style="color:var(--muted);font-size:0.88rem;">Post Doctoral Scholar, UCF</div>
+            <div style="font-size:0.88rem;"><a href="mailto:rebecca.freihaut@ucf.edu">rebecca.freihaut@ucf.edu</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Md Sarwar Uddin Chowdhury &nbsp;·&nbsp; PhD Candidate, Electrical &amp; Computer Engineering, University of Central Florida</p>
+    <p style="margin-top:0.4rem;">
+      <a href="mailto:mdsarwaruddin.chowdhury@ucf.edu">mdsarwaruddin.chowdhury@ucf.edu</a> &nbsp;·&nbsp;
+      <a href="https://scholar.google.com/citations?user=gyP-WAMAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Drag and drop + file selection for philosophy uploads
+  function handleFile(input, type) {
+    const file = input.files[0];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    const chosenEl = document.getElementById(type + '-chosen');
+    const viewEl = document.getElementById(type + '-view');
+    const linkEl = document.getElementById(type + '-link');
+    chosenEl.textContent = '✅ ' + file.name;
+    chosenEl.style.display = 'block';
+    linkEl.href = url;
+    viewEl.style.display = 'block';
+  }
+
+  ['teaching-zone','research-zone'].forEach(id => {
+    const zone = document.getElementById(id);
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      const type = id.replace('-zone','');
+      const input = document.getElementById(type + '-file');
+      input.files = e.dataTransfer.files;
+      handleFile(input, type);
+    });
+  });
+</script>
+
+</body>
+</html>
