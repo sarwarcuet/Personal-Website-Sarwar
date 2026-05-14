@@ -463,10 +463,16 @@
       </div>
     </div>
     <div class="hero-photo-card">
-      <div class="photo-placeholder">
-        <div class="photo-icon">🎓</div>
-        <div>Replace with your professional photo<br><code style="font-size:0.78rem;opacity:0.6">profile.jpg</code></div>
+      <div class="photo-placeholder" id="photo-placeholder" onclick="document.getElementById('photo-file').click()" style="cursor:pointer;position:relative;overflow:hidden;" title="Click to upload your photo">
+        <img id="profile-img" src="" alt="Profile Photo" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:14px;position:absolute;top:0;left:0;">
+        <div id="photo-prompt" style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+          <div class="photo-icon">📷</div>
+          <div style="font-weight:700;font-size:0.95rem;color:var(--accent);">Upload Your Photo</div>
+          <div style="font-size:0.82rem;color:var(--muted);">Click to browse &middot; JPG or PNG</div>
+          <span class="btn btn-gold" style="font-size:0.8rem;padding:0.4rem 0.9rem;pointer-events:none;">Choose Photo</span>
+        </div>
       </div>
+      <input type="file" id="photo-file" accept="image/*" style="display:none" onchange="handlePhoto(this)">
       <div class="quick-info">
         <div class="quick-info-item"><span class="q-icon">🏛️</span> University of Central Florida</div>
         <div class="quick-info-item"><span class="q-icon">📅</span> PhD Expected: Summer 2026</div>
@@ -711,8 +717,13 @@
       </div>
 
       <div class="pub-item">
-        <div class="pub-title">A Comprehensive Review of Optical Wireless Propagation Models Across Diverse Environments <span class="pub-status">In Preparation</span></div>
-        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, Sardar, A.I., Samiul, S. S., Sayed, Z.M., Yuksel, M. &mdash; 2026</div>
+        <div class="pub-title">A Comprehensive Review of Optical Wireless Propagation Models Across Diverse Environments <span class="pub-status">Under Review</span></div>
+        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, Sardar, A.I., Samiul, S. S., Sayed, Z.M., Yuksel, M. &mdash; <em>IEEE Communications Surveys &amp; Tutorials</em>, 2026</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Data-Driven Stabilization-Aware Optimization of UAV-Based Free-Space Optical Links <span class="pub-status">In Preparation</span></div>
+        <div class="pub-meta"><strong>Chowdhury, M. S. U.</strong>, Yuksel, M. &mdash; <em>Manuscript in Preparation</em>, 2026</div>
       </div>
 
       <div class="pub-item">
@@ -1010,7 +1021,19 @@
 </footer>
 
 <script>
-  // Drag and drop + file selection for philosophy uploads
+  // Photo upload handler
+  function handlePhoto(input) {
+    const file = input.files[0];
+    if (!file) return;
+    const url = URL.createObjectURL(file);
+    const img = document.getElementById('profile-img');
+    const prompt = document.getElementById('photo-prompt');
+    img.src = url;
+    img.style.display = 'block';
+    prompt.style.display = 'none';
+  }
+
+  // Philosophy / CV file upload handler
   function handleFile(input, type) {
     const file = input.files[0];
     if (!file) return;
